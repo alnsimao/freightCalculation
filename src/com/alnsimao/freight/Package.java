@@ -46,5 +46,11 @@ public class Package {
 	public void removeCargo(Cargo cargo ) {
 		listCargo.add(cargo);
 	}
+	public void displayCargo() {
+		for(Cargo c : this.listCargo) {
+			System.out.println("-- Cargo Description: "+ c.getDescription());
+			System.out.println("-- Cargo Mass: " +c.getMass());
+		}
+	}
 
 }
