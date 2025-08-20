@@ -35,6 +35,9 @@ public class Freight {
 	
 	public void addPackage(Package packages) {
 		 this.packages.add(packages);
+	} 
+	public void removePackage(Package packages) {
+		this.packages.remove(packages);
 	}
 	
 }
