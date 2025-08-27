@@ -3,16 +3,16 @@ package com.alnsimao.freight;
 import java.util.List;
 
 public class Package {
-	private int id;
+	private String id;
 	private Address address;
 	private String notes;
 	private List<Cargo> listCargo;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -39,18 +39,25 @@ public class Package {
 	public void setListCargo(List<Cargo> listCargo) {
 		this.listCargo = listCargo;
 	}
-	
+
 	public void addCargo(Cargo cargo) {
 		listCargo.add(cargo);
 	}
-	public void removeCargo(Cargo cargo ) {
-		listCargo.add(cargo);
+
+	public void removeCargo(Cargo cargo) {
+		listCargo.remove(cargo);
 	}
+
 	public void displayCargo() {
-		for(Cargo c : this.listCargo) {
-			System.out.println("-- Cargo Description: "+ c.getDescription());
-			System.out.println("-- Cargo Mass: " +c.getMass());
-		}
+
+		/*
+		 * for(Cargo c : this.listCargo) { System.out.println("-- Cargo Description: "+
+		 * c.getDescription()); System.out.println("-- Cargo Mass: " +c.getMass()); }
+		 */
+		
+		this.listCargo.stream().filter(cargo -> cargo.getMass() > 5).forEach(cargo -> {
+			System.out.println("Cargo: "+cargo.getDescription());
+		});
 	}
 
 }

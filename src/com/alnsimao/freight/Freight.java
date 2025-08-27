@@ -1,12 +1,13 @@
 package com.alnsimao.freight;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Freight {
 	private Address address;
 	private double value;
 	private double distance;
-	private List<Package> packages;
+	private List<Package> packages = new ArrayList<>();
 
 	public double getValue() {
 		return value;
